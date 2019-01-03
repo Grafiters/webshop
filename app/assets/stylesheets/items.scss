@@ -1,3 +1,92 @@
-// Place all the styles related to the Items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.container{
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 1140px;
+}
+
+.navbar .container{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    color: mediumaquamarine;
+    float: left;
+    display: block;
+    text-align: center;
+    padding-left: 25px;
+    text-decoration: none;
+    position: relative;
+}
+
+li a{
+    display: grid;
+    color: mediumaquamarine;
+    text-decoration: none;
+}
+
+body{
+    font-size: 15px;
+}
+
+.background-page{
+    background-color: cyan;
+}
+
+.row{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+}
+
+h2{
+    font-size: 40px;
+    font-style: inherit;
+    font-family: 'Stencil';
+}
+
+h4{
+    font-size: 40px;
+    font-style: inherit;
+    font-family: 'Stencil';
+}
+
+p{
+    font-size:20px;
+}
+
+#nothing-text{
+    font-family: 'Lemon';
+}
+
+#text{
+    margin-left:25px;
+
+}
+
+#xbanner{
+    margin: 25px;
+    padding: 25px;
+}
+
+.features{
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
+    position: relative;
+    text-align: center;
+}
