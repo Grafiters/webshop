@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
             session[:user_id] = user.id
             redirect_to '/'
         else
-            render 'username and password not valid'
-            redirect_to 'login'
+            flash[:login_errors] = ['invalid username and password']
+            redirect_to '/login'
         end
     end
     private
