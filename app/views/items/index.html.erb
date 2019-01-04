@@ -4,6 +4,13 @@
         <title>tampilan awal</title>
     </head>
     <body>
+    <div class="succes">
+        <% if flash[:login_succes] %>
+            <% flash[:login_succes].each do |sucses| %>
+                <p><%= sucses %></p>
+            <% end %>
+        <% end %>
+    </div>
         <div class="index blog">
             <div class="navigasi">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
