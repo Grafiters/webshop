@@ -13,5 +13,4 @@ class UsersController < ApplicationController
         def login_params
             params.reuire(:login).permit(:name, :password)
         end
-        
 end
