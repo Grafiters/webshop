@@ -1,2 +1,0 @@
-class AddItemsController < ApplicationController
-end
