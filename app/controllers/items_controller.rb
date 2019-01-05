@@ -4,10 +4,10 @@ class ItemsController < ApplicationController
     # before_action :user_is_admin, only: [:show, :create, :update, :destroy]
 
     def index
-        
+        @items = Item.all
     end
     def show
-        
+        @items = Item.all
     end
     def new
         @item = Item.new
@@ -28,7 +28,7 @@ class ItemsController < ApplicationController
             params.require(:item).permit(:title, :description, :price, :image)
         end
         def find_item
-            @item = Item.find(params[:id])
+            @items = Item.all
         end
                 
 end

@@ -1,0 +1,8 @@
+<% @items.each do |f| %>
+    <div>
+        <div class="image"><%= image_tag f.image_url.to_s %></div>
+        <div class="title"><%= f.title %></div>
+        <div class="description"><%= f.description %></div>
+        <div class="price"><%= f.price %></div>
+    </div>
+<% end %>
