@@ -8,5 +8,6 @@ Rails.application.routes.draw do
   post '/users' => 'users#create'
   post '/regis' => 'registers#create'
   post '/session' => 'sessions#create'
-  
+  post '/add-items' => 'items#create'
+
 end

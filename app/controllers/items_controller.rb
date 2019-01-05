@@ -1,6 +1,7 @@
 class ItemsController < ApplicationController
 
     before_action :find_item,   only: [:show, :edit, :update, :destroy]
+    # before_action :user_is_admin, only: [:show, :create, :update, :destroy]
 
     def index
         
@@ -12,7 +13,7 @@ class ItemsController < ApplicationController
         @item = Item.new
     end
     def create
-        @item = Items.new(items_params)
+        @item = Item.new(items_params)
         if @item.save
             flash[:add_items_success] = ['items has been created']
             redirect_to '/'

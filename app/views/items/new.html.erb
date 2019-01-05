@@ -1,0 +1,29 @@
+<div class="succes">
+    <% if flash[:add_items_success] %>
+        <% flash[:add_items_success].each do |sucses| %>
+            <p><%= sucses %></p>
+        <% end %>
+    <% end %>
+</div>
+<%= form_for(:item) do |f| %>
+    <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+    <div>
+        <%= f.label :title %>
+        <%= f.text_field :title %>
+    </div>
+    <div>
+        <%= f.label :description %>
+        <%= f.text_field :description %>
+    </div>
+    <div>
+        <%= f.label :price %>
+        <%= f.text_field :price %>
+    </div>
+    <div>
+        <%= f.label :image %>
+        <%= f.file_field :image %>
+    </div>
+    <div>
+        <%= f.submit %>
+    </div>
+<% end %>
