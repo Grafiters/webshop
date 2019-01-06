@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
             return if logged_in? && current_user.admin?
 
             flash[:info] = "don't have the previliges for this section"
-            redirect_back(fallback_location: root_url)
+            # redirect_back(fallback_location: 'root_url')
         end
 
 end

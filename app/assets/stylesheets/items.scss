@@ -84,9 +84,21 @@ p{
 }
 
 .features{
-    justify-content: space-between;
+    justify-content: baseline;
     display: flex;
+    flex-wrap: nowrap;
     align-items: center;
     position: relative;
     text-align: center;
+}
+
+#item {
+    display: inline-block;
+    padding: 50px;
+}
+
+.style-image{
+    max-width: auto;
+    max-height: 100px;
+    padding-right: 25px;
 }

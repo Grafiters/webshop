@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/register' => 'registers#index'
   get '/add-items' => 'items#new'
   get '/item' => 'items#show'
+  get '/logout' => 'sessions#destroy'
 
   post '/users' => 'users#create'
   post '/regis' => 'registers#create'

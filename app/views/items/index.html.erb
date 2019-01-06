@@ -4,13 +4,13 @@
         <title>tampilan awal</title>
     </head>
     <body>
-    <div class="succes">
-        <% if flash[:login_succes] %>
-            <% flash[:login_succes].each do |sucses| %>
-                <p><%= sucses %></p>
+        <div class="succes">
+            <% if flash[:login_succes] %>
+                <% flash[:login_succes].each do |sucses| %>
+                    <p><%= sucses %></p>
+                <% end %>
             <% end %>
-        <% end %>
-    </div>
+        </div>
         <div class="index blog">
             <div class="navigasi">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,10 +21,30 @@
                         <div class="collapse navbar-collapse" id="menu">
                             <ul class="navbar-nav ml-auto mt-2 mt-lg-0">
                                 <li><a href="/">Home</a></li>
-                                <li><a href="news">News</a></li>
-                                <li><a href="/item">Producs</a></li>
-                                <li><a href="features">Features</a></li>
-                                <li><a href="/login">Login</a></li>
+                                <% if logged_in? %>
+                                    <li>
+                                        <a href="/user_count">User</a>
+                                    </li>
+                                    <li>
+                                        <a href="/cart">Cart</a>
+                                    </li>
+                                    <li>
+                                        <a href="/orders"></a>
+                                    </li>
+                                    <li class="dropdown">
+                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        Account
+                                            <b class="caret"></b>
+                                        </a>
+                                    </li>
+                                    <li class="logout">
+                                        <a href="/logout">Sign out<a>
+                                    </li>
+                                <% else %>
+                                    <li class="login">
+                                        <a href="/login">Log In</a>
+                                    </li>
+                                <% end %>
                             </ul>
                         </div>
                     </div>
@@ -49,31 +69,19 @@
             <br>
             <div class="features">
                 <div class="container clearfyx my-lg-4">
-                    <h4 class="text-center">THERE IS NOTHING FEATURES</h4>
+                    <h4 class="text-center">The Products</h4>
                     <div class="row no-gutters p-md-5 p-2">
                         <div class="col-md-4 col-12 px-2"  id="text">
                             <div class="text-center">
-                                
+                                <% @items.each do |f| %>
+                                    <div class="item" id="item">
+                                        <%= image_tag f.image_url.to_s, :class => "style-image" %>
+                                        <p><%= f.title %>
+                                        <%= f.description %>
+                                        $ <%= f.price %>.00</p>
+                                    </div>
+                                <% end %>
                             </div>
-                            <p mt-3 categories-category-text>every day we bring information free book for you</p>
-                        </div>
-                        <div class="col-md-4 col-12 px-2" id="text">
-                            <div class="text-center">
-                                
-                            </div>
-                            <p mt-3 categories-category-text>we have more user and you one of the lucky human in this word</p>
-                        </div>
-                        <div class="col-md-4 col-12 px-2" id="text">
-                            <div class="text-center">
-                                
-                            </div>
-                            <p mt-3 categories-category-text>if you have new ideas or new features for this web cammon join with as</p>
-                        </div>
-                        <div class="col-md-4 col-12 px-2" id="text">
-                            <div class="text-center">
-                                
-                            </div>
-                            <p mt-3 categories-category-text>you have to becareful, bacause anyone can fraud of you</p>
                         </div>
                     </div>
                 </div>
